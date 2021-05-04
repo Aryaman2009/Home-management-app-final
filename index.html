@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+ <html>
+      <head>
+           <title>
+                 Home Management App
+           </title>
+
+           <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script> 
+
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+           <script src="main.js"></script>
+     </head>
+     <body style="background-image: url('images\ \(1\).jpg');background-size: cover;">
+        <h1 class="btn btn-info" style="margin-top: 0;width: 100%;font-size: xx-large;text-decoration: underline rgb(255, 255, 255) 5px;color: rgb(255, 255, 255);"><b>Home Management App</b></h1>
+      <br><br>
+      &nbsp; &nbsp; <label style="font-size: large;color: white;"><b>Date : </b></label> &nbsp; &nbsp; &nbsp; &nbsp;
+      <input id="date" type="date"  style="width: 40%;border-radius: 5px;">
+      <br><br>
+      <div class="col-lg-4 col-sm-4 col-xs-4 ">
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;"> Item:</label>
+       <br><br>
+       <input id="o_j" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Online Jadu">
+       <br><br>
+       <input id="g" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Grocerry">
+       <br><br>
+       <input id="s" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Sweets">
+       <br><br>
+       <input id="veg" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Vegetables">
+       <br><br>
+       <input id="z" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Zomato">
+       <br><br>
+       <input id="o" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Others">
+       <br><br>
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;" >Paper :</label>
+       <br><br>
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;" >Servent :</label>
+       <br><br>
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;" >Internet :</label>
+       <br><br>
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;" >Malabika :</label>
+      </div>
+      <div class="col-lg-4 col-sm-4 col-xs-4 ">
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;"> Quantity:</label>
+       <br><br>
+       <input id="q_o_j" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       <input id="q_g" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       <input id="q_s" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       <input id="q_veg" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       <input id="q_z" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       <input id="q_o" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Quantity">
+       <br><br>
+       
+       <input id="a_p" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_ser" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_in" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_m" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+      </div>
+      <div class="col-lg-4 col-sm-4 col-xs-4 ">
+       <label style="font-size: large;color: white;text-decoration: underline rgb(255, 255, 255) 3px;">Amount:</label>
+       <br><br>
+       <input id="a_o_j" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_g" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_s" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_veg" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_z" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br><br>
+       <input id="a_o" type="text"  style="width: 60%;border-radius: 5px;" placeholder="Amount">
+       <br>
+      </div>
+      <br><br><br>
+       <button class="btn btn-danger" onclick="save_o()" style="margin-top: 20px;margin-left: 20px;">Save</button>
+       <button class="btn btn-success" onclick="up()" style="margin-top: 20px;margin-left: 20px;">Update</button>
+       <button class="btn btn-warning" onclick="re()" style="margin-top: 20px;margin-left: 20px;">Remove</button>
+       <button class="btn btn-info" onclick="shOW()" style="margin-top: 20px;margin-left: 20px;">Show</button>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" onclick="ne()" style="margin-top: 20px;margin-left: 20px;">Next ⏭</button>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Screenshot 2021-05-04 224553.png" style="width: 20%;height: 30%;">
+       <br><br>
+     </body>
+</html>
